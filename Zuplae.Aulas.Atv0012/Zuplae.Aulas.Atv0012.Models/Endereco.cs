@@ -2,10 +2,6 @@
 {
     public class Endereco
     {
-        public Endereco()
-        {
-            
-        }
         public string rua;
         public string numero;
         public string bairro;
@@ -15,7 +11,7 @@
 
         public override string ToString()
         {
-            return $"Rua {this.rua}, Nº {this.numero}, Bairro {this.bairro}, \nCidade: {this.cidade}, Estado {this.estado}, \nCEP: {this.cep}";
+            return $"\nRua {this.rua}, Nº {this.numero}, Bairro {this.bairro}, \nCidade: {this.cidade}, Estado {this.estado}, \nCEP: {this.cep}";
         }
     }
 }

@@ -8,11 +8,6 @@ namespace Zuplae.Aulas.Atv0012.Models
 {
     public class Produto
     {
-        public Produto()
-        {
-
-        }
-
         public string nomeProduto;
         public string codigoProduto;
         public string precoProduto;
@@ -21,7 +16,7 @@ namespace Zuplae.Aulas.Atv0012.Models
 
         public override string ToString()
         {
-            return $"Produto: {this.nomeProduto}, Código: {this.codigoProduto}, Preço: {this.precoProduto}";
+            return $"Produto: {this.nomeProduto}, Código: {this.codigoProduto}, Preço:C {this.precoProduto}";
         }
     }
 }

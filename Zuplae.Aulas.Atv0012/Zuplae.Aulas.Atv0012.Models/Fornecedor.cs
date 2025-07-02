@@ -8,11 +8,6 @@ namespace Zuplae.Aulas.Atv0012.Models
 {
     public class Fornecedor
     {
-        public Fornecedor()
-        {
-            
-        }
-
         public string razaoSocial;
         public string cnpj;
 
@@ -20,7 +15,7 @@ namespace Zuplae.Aulas.Atv0012.Models
 
         public override string ToString()
         {
-            return $"Nome: {this.razaoSocial} - CNPJ: {this.cnpj} \nEndereço: ";
+            return $"Nome: {this.razaoSocial} - CNPJ: {this.cnpj} \nEndereço: {this.endereco}";
         }
     }
 }
