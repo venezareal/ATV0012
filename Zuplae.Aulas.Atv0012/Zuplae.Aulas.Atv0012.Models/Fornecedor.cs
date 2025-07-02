@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zuplae.Aulas.Atv0012.Models
 {
-    internal class Fornecedor
+    public class Fornecedor
     {
         public Fornecedor()
         {
@@ -20,7 +20,7 @@ namespace Zuplae.Aulas.Atv0012.Models
 
         public override string ToString()
         {
-            return $"Nome: {this.razaoSocial} - CNPJ: {this.cnpj}";
+            return $"Nome: {this.razaoSocial} - CNPJ: {this.cnpj} \nEndereço: ";
         }
     }
 }

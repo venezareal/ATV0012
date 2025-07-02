@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zuplae.Aulas.Atv0012.Models
 {
-    internal class Produto
+    public class Produto
     {
         public Produto()
         {

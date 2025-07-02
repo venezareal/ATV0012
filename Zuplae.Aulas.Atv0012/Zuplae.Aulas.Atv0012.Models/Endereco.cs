@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return $"Rua {this.rua}, Nº {this.numero}, Bairro {this.bairro}, Cidade: {this.cidade}, Estado {this.estado}, CEP: {this.cep}";
+            return $"Rua {this.rua}, Nº {this.numero}, Bairro {this.bairro}, \nCidade: {this.cidade}, Estado {this.estado}, \nCEP: {this.cep}";
         }
     }
 }
