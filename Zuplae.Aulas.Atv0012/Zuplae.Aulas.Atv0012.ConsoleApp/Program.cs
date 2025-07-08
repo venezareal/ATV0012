@@ -39,11 +39,11 @@ Fornecedor fornecedor2 = new Fornecedor();
 
 fornecedor1.SetRazaoSocial("Motorola");
 fornecedor1.SetCnpj("12.563.655/0001-56");
-fornecedor1.endereco = endereco1;
+fornecedor1.SetEndereco(endereco1);
 
 fornecedor2.SetRazaoSocial("Santa");
 fornecedor2.SetCnpj("02.135.687/0001-98");
-fornecedor2.endereco = endereco2;
+fornecedor2.SetEndereco(endereco2);
 
 
 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -56,20 +56,19 @@ Console.ResetColor();
 Produto produto1 = new Produto();
 Produto produto2 = new Produto();
 
-produto1.SetNomeProduto("celular");
 produto1.SetCodigoProduto("230");
-produto1.SetPreco(3.000m);
-produto1.fornecedor = fornecedor1;
+produto1.SetPrecoProduto(3.000m);
+produto1.SetFornecedor(fornecedor1);
 
 produto2.SetNomeProduto("Maca");
 produto2.SetCodigoProduto("580");
-produto2.SetPreco(600.50m);
-produto2.fornecedor = fornecedor2;
+produto2.SetPrecoProduto(600.50m);
+produto2.SetFornecedor(fornecedor2);
 
 
 Console.WriteLine("\n\n\tINFORMAÇÕES PRODUTO 1: \n");
-Console.WriteLine(produto1.GetNomeProduto);
-Console.WriteLine(produto1.GetPreco);
+Console.WriteLine(produto1);
+Console.WriteLine(produto1);
 Console.WriteLine("\n\n\tINFORMAÇÕES PRODUTO 2: \n");
-Console.WriteLine(produto2.GetNomeProduto);
-Console.WriteLine(produto2.GetPreco);
+Console.WriteLine(produto2);
+Console.WriteLine(produto2);
