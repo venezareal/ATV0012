@@ -5,6 +5,7 @@
         #region CamposPrivados
             private string rua;
             private string numero;
+            private string complemento;
             private string bairro;
             private string cidade;
             private string estado;
@@ -26,6 +27,15 @@
             public string GetNumero()
             {
                 return this.numero;
+            }
+
+            public void SetComplemento(String complemento)
+            {
+                this.complemento = complemento;
+            }
+            public String GetComplemento()
+            {
+                return this.complemento;
             }
 
             public void SetBairro(string bairro)
@@ -70,7 +80,7 @@
         #region ImpressaoToString
             public override string ToString()
             {
-                return $"\nRua {this.GetRua}, Nº {this.GetNumero}, Bairro {this.GetBairro}, \nCidade: {this.GetCidade}, Estado {this.GetEstado}, \nCEP: {this.GetCep}";
+                return $"\nRua {this.GetRua}, Nº {this.GetNumero}, Complemento: {this.complemento}, Bairro: {this.GetBairro}, \nCidade: {this.GetCidade}, Estado: {this.GetEstado}, \nCEP: {this.GetCep}";
             }
         #endregion
     }
