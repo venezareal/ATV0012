@@ -1,6 +1,6 @@
 ﻿namespace Zuplae.Aulas.Atv0012.Models
 {
-    public class Endereco
+    public class Endereco : BaseModel
     {
         #region CamposPrivados
             private string rua;

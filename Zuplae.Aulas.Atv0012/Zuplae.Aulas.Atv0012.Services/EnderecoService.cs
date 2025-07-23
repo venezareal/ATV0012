@@ -1,4 +1,5 @@
-﻿using Zuplae.Aulas.Atv0012.Models;
+﻿using System.Reflection.Metadata.Ecma335;
+using Zuplae.Aulas.Atv0012.Models;
 
 
 namespace Zuplae.Aulas.Atv0012.Services
@@ -6,7 +7,7 @@ namespace Zuplae.Aulas.Atv0012.Services
     public class EnderecoService
     {
         private static List<Endereco> enderecos = new List<Endereco>();
-        public void Cadastrar(string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string cep)
+        public int Cadastrar(string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string cep)
         {
             Endereco endereco1 = new Endereco();
             endereco1.SetRua(logradouro);
@@ -17,6 +18,9 @@ namespace Zuplae.Aulas.Atv0012.Services
             endereco1.SetEstado(estado);
             endereco1.SetCep(cep);
             enderecos.Add(endereco1);
+
+            int id = endereco1.GetId();
+            return id;
         }
         public void Editar()
         {
@@ -25,6 +29,11 @@ namespace Zuplae.Aulas.Atv0012.Services
         public void Listar()
         { 
 
+        }
+        public Endereco ListarPorId(int id)
+        {
+            Endereco end = enderecos.Find(e => e.GetId() == id);        
+            return end;
         }
         public void Deletar()
         {
