@@ -21,22 +21,42 @@ namespace Zuplae.Aulas.Atv0012.Services
             int id = fornecedor1.GetId();
             return id;
         }
-        public void Editar()
+        public bool Editar(int id, string razaoSocial, string cnpj, Endereco endereco)
         {
-
+            Fornecedor fornecedor = this.ListarPorId(id);
+            if (fornecedor != null)
+            {
+                fornecedor.SetRazaoSocial(razaoSocial);
+                fornecedor.SetCnpj(cnpj);
+                fornecedor.SetEndereco(endereco);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public void Listar()
+        public List<Fornecedor> Listar()
         {
-
+            return fornecedores;
         }
         public Fornecedor ListarPorId(int id)
         {
             Fornecedor primario = fornecedores.Find(e => e.GetId() == id);
             return primario;
         }
-        public void Deletar()
+        public bool Deletar(int id)
         {
-
+            Fornecedor fornecedor = this.ListarPorId(id);
+            if (fornecedor != null)
+            {
+                fornecedores.Remove(fornecedor);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

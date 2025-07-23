@@ -22,22 +22,44 @@ namespace Zuplae.Aulas.Atv0012.Services
             int id = produto1.GetId();
             return id;
         }
-        public void Editar()
+        public bool Editar(int id, string nomeProduto, string codigoProduto, decimal precoProduto, Fornecedor fornecedor)
         {
-
+            Produto produto = this.ListarPorId(id);
+            if (produto != null)
+            {
+                produto.SetNomeProduto(nomeProduto);
+                produto.SetCodigoProduto(codigoProduto);
+                produto.SetPrecoProduto(precoProduto);
+                produto.SetFornecedor(fornecedor);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public void Listar()
+        public List<Produto> Listar()
         {
-
+            return produtos;
         }
         public Produto ListarPorId(int id)
         {
             Produto mercadoria = produtos.Find(e => e.GetId() == id);
             return mercadoria;
         }
-        public void Deletar()
+        public bool Deletar(int id)
         {
-
+            Produto produto = this.ListarPorId(id);
+            if (produto != null)
+            {
+                produtos.Remove(produto);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
     }
 }
