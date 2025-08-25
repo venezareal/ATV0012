@@ -9,10 +9,10 @@ namespace Zuplae.Aulas.Atv0012.Models
     public class Produto : BaseModel
     {
         #region CamposPrivados
-            private string nomeProduto;
-            private string codigoProduto;
-            private decimal precoProduto;
-            private Fornecedor fornecedor;
+            public string NomeProduto { get; set; }
+            public string CodigoProduto { get; private set; }
+            public decimal PrecoProduto { get; set; }
+            public Fornecedor Fornecedor { get; set; }
         #endregion
         #region MetodosGetSet
             public void SetNomeProduto(string nomeProduto)
@@ -21,7 +21,7 @@ namespace Zuplae.Aulas.Atv0012.Models
             }
             public string GetNomeProduto()
             {
-                return this.nomeProduto;     
+                return this.nomeProduto.toupper;     
             }
             public void SetCodigoProduto(string codigoProduto)
             {
