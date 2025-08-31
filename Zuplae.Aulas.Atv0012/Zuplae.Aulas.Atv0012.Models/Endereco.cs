@@ -11,13 +11,11 @@
             public string Estado { get; set; }
             public string Cep { get; set; }
         #endregion
-        #region MetodosGetSet
-            
-        #endregion
+       
         #region ImpressaoToString
             public override string ToString()
             {
-                return $"\nRua {this.GetRua}, Nº {this.GetNumero}, Complemento: {this.complemento}, Bairro: {this.GetBairro}, \nCidade: {this.GetCidade}, Estado: {this.GetEstado}, \nCEP: {this.GetCep}";
+                return $"\nRua {Logradouro}, Nº {Numero}, Complemento: {Complemento}, Bairro: {Bairro}, \nCidade: {Cidade}, Estado: {Estado}, \nCEP: {Cep}";
             }
         #endregion
     }

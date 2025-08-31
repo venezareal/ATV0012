@@ -8,48 +8,54 @@ namespace Zuplae.Aulas.Atv0012.Models
 {
     public class Produto : BaseModel
     {
-        #region CamposPrivados
-            public string NomeProduto { get; set; }
-            public string CodigoProduto { get; private set; }
-            public decimal PrecoProduto { get; set; }
-            public Fornecedor Fornecedor { get; set; }
+        #region Propriedades
+            private string _nome;
+            public string NomeProduto {
+                get { return this._nome.ToUpper(); }
+                set { this._nome = value; } 
+            }
+            
+            private decimal _preco;
+            public decimal PrecoProduto { 
+                get { return _preco; }
+                set {
+                if (value < 0 || value > 100.00m) 
+                {
+                    throw new Exception("Preço deve estar entre R$ 0,00 e R$ 100,00.");
+                    
+                }
+                    this._preco = value;
+                
+                } 
+            }
+             public string CodigoProduto { get; private set; }
+
+             public Fornecedor Fornecedor { get; set; }
         #endregion
-        #region MetodosGetSet
-            public void SetNomeProduto(string nomeProduto)
+        #region Construtores
+            public Produto() 
             {
-                this.nomeProduto = nomeProduto;
+                this.GerarCodigo();
             }
-            public string GetNomeProduto()
+            public Produto(string nome, decimal preco, Fornecedor fornecedor) 
             {
-                return this.nomeProduto.toupper;     
+                this.NomeProduto = nome;
+                this.PrecoProduto = preco;
+                this.Fornecedor = fornecedor;
+
+                this.GerarCodigo();
             }
-            public void SetCodigoProduto(string codigoProduto)
-            {
-                this.codigoProduto = codigoProduto;
-            }
-            public string GetCodigoProduto()
-            {
-                return this.codigoProduto;
-            }
-            public void SetPrecoProduto(decimal preco)
-            {
-                this.precoProduto = preco;
-            }
-            public decimal GetPrecoProduto()
-            {
-                return this.precoProduto;
-            }
-            public void SetFornecedor(Fornecedor fornecedor){
-                this.fornecedor = fornecedor;
-            }
-            public Fornecedor GetFornecedor() {
-                return this.fornecedor;
-            }
+      
+           
         #endregion
         #region ImpressaoToString
            public override string ToString()
             {
-                return $"Produto: {this.GetNomeProduto}, Código: {this.GetCodigoProduto}, Preço:C {this.GetPrecoProduto}, \nFornecedor: {this.GetFornecedor}";
+                return $"Produto: {NomeProduto}, Código: {CodigoProduto}, Preço:C {PrecoProduto}, \nFornecedor: {Fornecedor}";
+            }
+            public void GerarCodigo() 
+            {
+                CodigoProduto = "ZPEL" + Guid.NewGuid().ToString("N").Substring(0,8).ToUpper();
             }
         #endregion
     }

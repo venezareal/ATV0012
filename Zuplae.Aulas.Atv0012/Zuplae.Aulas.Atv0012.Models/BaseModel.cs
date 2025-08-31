@@ -9,7 +9,11 @@ namespace Zuplae.Aulas.Atv0012.Models
     public class BaseModel
     {
         #region Campos Privados
-            private static int id;
+            public static int Id 
+            {
+                get;
+                set { };
+            }
 
         #endregion
         #region Id

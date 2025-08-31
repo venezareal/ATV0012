@@ -10,34 +10,58 @@ namespace Zuplae.Aulas.Atv0012.Services
         public int Cadastrar(string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string cep)
         {
             Endereco endereco1 = new Endereco();
-            endereco1.SetRua(logradouro);
-            endereco1.SetNumero(numero);
-            endereco1.SetComplemento(complemento);
-            endereco1.SetBairro(bairro);
-            endereco1.SetCidade(cidade);
-            endereco1.SetEstado(estado);
-            endereco1.SetCep(cep);
+            endereco1.Logradouro = logradouro;
+            endereco1.Numero = numero;
+            endereco1.Complemento = complemento;
+            endereco1.Bairro = bairro;
+            endereco1.Cidade = cidade;
+            endereco1.Estado = estado;
+            endereco1.Cep = cep;
             enderecos.Add(endereco1);
 
             int id = endereco1.GetId();
             return id;
         }
-        public void Editar()
+        public bool Editar(int id, string logradouro, string numero, string complemento, string bairro, string cidade, string estado, string cep)
         {
-
+            Endereco endereco = this.ListarPorId(id);
+            if (endereco != null)
+            {
+                endereco.Logradouro = logradouro;
+                endereco.Numero = numero;
+                endereco.Complemento = complemento;
+                endereco.Bairro = bairro;
+                endereco.Cidade = cidade;
+                endereco.Estado = estado;
+                endereco.Cep = cep;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public void Listar()
-        { 
-
+        public List<Endereco> Listar()
+        {
+            return enderecos;
         }
         public Endereco ListarPorId(int id)
         {
             Endereco end = enderecos.Find(e => e.GetId() == id);        
             return end;
         }
-        public void Deletar()
+        public bool Deletar(int id)
         {
-
+            Endereco endereco = this.ListarPorId(id);
+            if (endereco != null)
+            {
+                enderecos.Remove(endereco);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

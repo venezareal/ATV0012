@@ -13,10 +13,10 @@ namespace Zuplae.Aulas.Atv0012.Services
         public int Cadastrar(string nomeProduto, string codigoProduto, decimal precoProduto, Fornecedor fornecedor)
         {
             Produto produto1 = new Produto();
-            produto1.SetNomeProduto(nomeProduto);
-            produto1.SetCodigoProduto(codigoProduto);
-            produto1.SetPrecoProduto(precoProduto);
-            produto1.SetFornecedor(fornecedor);
+            produto1.NomeProduto = nomeProduto;
+            produto1.CodigoProduto = codigoProduto;
+            produto1.PrecoProduto = precoProduto;
+            produto1.Fornecedor = fornecedor;
             produtos.Add(produto1);
 
             int id = produto1.GetId();
