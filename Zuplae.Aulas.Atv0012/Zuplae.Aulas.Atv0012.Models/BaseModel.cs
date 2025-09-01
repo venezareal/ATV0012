@@ -9,18 +9,15 @@ namespace Zuplae.Aulas.Atv0012.Models
     public class BaseModel
     {
         #region Campos Privados
-            private static int id;
+            private static int id  = 0;
 
         #endregion
         #region Id
-            public void SetId(int id)
-            {
-                id = id;
-            }
             public int GetId()
             {
-                return this.id;
+                return id;
             }
+           
         #endregion
         #region Construtor
             public BaseModel()

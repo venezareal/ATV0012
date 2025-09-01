@@ -13,9 +13,9 @@ namespace Zuplae.Aulas.Atv0012.Services
         public int Cadastrar(string razaoSocial, string cnpj, Endereco endereco)
         {
             Fornecedor fornecedor1 = new Fornecedor();
-            fornecedor1.SetRazaoSocial(razaoSocial);
-            fornecedor1.SetCnpj(cnpj);
-            fornecedor1.SetEndereco(endereco);
+            fornecedor1.RazaoSocial = razaoSocial;
+            fornecedor1.Cnpj = cnpj;
+            fornecedor1.Endereco = endereco;
             fornecedores.Add(fornecedor1);
 
             int id = fornecedor1.GetId();
@@ -26,9 +26,9 @@ namespace Zuplae.Aulas.Atv0012.Services
             Fornecedor fornecedor = this.ListarPorId(id);
             if (fornecedor != null)
             {
-                fornecedor.SetRazaoSocial(razaoSocial);
-                fornecedor.SetCnpj(cnpj);
-                fornecedor.SetEndereco(endereco);
+                fornecedor.RazaoSocial = razaoSocial;
+                fornecedor.Cnpj = cnpj;
+                fornecedor.Endereco = endereco;
                 return true;
             }
             else

@@ -13,10 +13,10 @@ namespace Zuplae.Aulas.Atv0012.Services
         public int Cadastrar(string nomeProduto, string codigoProduto, decimal precoProduto, Fornecedor fornecedor)
         {
             Produto produto1 = new Produto();
-            produto1.SetNomeProduto(nomeProduto);
-            produto1.SetCodigoProduto(codigoProduto);
-            produto1.SetPrecoProduto(precoProduto);
-            produto1.SetFornecedor(fornecedor);
+            produto1.NomeProduto = nomeProduto;
+            produto1.CodigoProduto = codigoProduto;
+            produto1.PrecoProduto = precoProduto;
+            produto1.Fornecedor = fornecedor;
             produtos.Add(produto1);
 
             int id = produto1.GetId();
@@ -27,10 +27,10 @@ namespace Zuplae.Aulas.Atv0012.Services
             Produto produto = this.ListarPorId(id);
             if (produto != null)
             {
-                produto.SetNomeProduto(nomeProduto);
-                produto.SetCodigoProduto(codigoProduto);
-                produto.SetPrecoProduto(precoProduto);
-                produto.SetFornecedor(fornecedor);
+                produto.NomeProduto = nomeProduto;
+                produto.CodigoProduto = codigoProduto;
+                produto.PrecoProduto = precoProduto;
+                produto.Fornecedor = fornecedor;
                 return true;
             }
             else
@@ -47,7 +47,7 @@ namespace Zuplae.Aulas.Atv0012.Services
             Produto mercadoria = produtos.Find(e => e.GetId() == id);
             return mercadoria;
         }
-        public bool Deletar(int id)
+        public bool Deletar()
         {
             Produto produto = this.ListarPorId(id);
             if (produto != null)
@@ -60,6 +60,5 @@ namespace Zuplae.Aulas.Atv0012.Services
                 return false;
             }
         }
-
     }
 }
